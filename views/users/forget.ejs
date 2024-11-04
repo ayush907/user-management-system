@@ -1,0 +1,22 @@
+<% include("../layouts/header") %>
+
+<h1>Forget</h1>
+
+<% if(typeof(message) != "undefined"){ %>
+    <p style="color: rgb(4, 144, 41); font-weight: bold;">
+        <%= message %>
+    </p>
+<% } %>
+
+<div>
+    <form action="/forget" method="post">
+        <div>
+            <label for="email">email :</label>
+            <input type="email" name="email" placeholder="enter email" required>
+        </div>
+        <br>
+        <input type="submit" value="Send Reset Link">
+    </form>
+</div>
+
+<% include("../layouts/footer") %>

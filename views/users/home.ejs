@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>this is home page (protected)</h4>
+    <h3>welcome, <%= user.name %></h3>
+
+    <table style="width: 50%">
+        <tr>
+            <td>Image</td>
+            <td><img style="width: 10rem; height: 10rem" src="/userImages/<%=user.image %>" alt="<%=user.image %>"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><%= user.email %></td>
+        </tr>
+        <tr>
+            <td>mobile no.</td>
+            <td><%= user.mobile %></td>
+        </tr>
+        <tr>
+            <td>Verified</td>
+            <td>
+                <% if(user.is_verified == 1){ %>
+                    <%= "true" %>
+                <% } %>
+            </td> 
+        </tr>
+    </table>
+
+    <div>
+        <ul>
+            <li><a href="/edit?id=<%= user.id %>">Edit</a></li>
+            <li><a href="/logout">Log out</a></li>
+        </ul>
+    </div>
+</body>
+</html>

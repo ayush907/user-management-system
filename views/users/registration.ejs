@@ -1,0 +1,41 @@
+<% include("../layouts/header.ejs") %>
+
+    <h1>User registration form</h1>
+    <div>
+        <form action="/register" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="name">Name :</label>
+                <input type="text" name="name" placeholder="enter name">
+            </div>
+            <br>
+            <div>
+                <label for="email">email :</label>
+                <input type="email" name="email" placeholder="enter email" required>
+            </div>
+            <br>
+            <div>
+                <label for="mno">mobile no :</label>
+                <input type="text" name="mno" placeholder="enter mobile no." required>
+            </div>
+            <br>
+            <div>
+                <label for="image">image :</label>
+                <input type="file" name="image" required>
+            </div>
+            <br>
+            <div>
+                <label for="password">password :</label>
+                <input type="password" name="password" placeholder="enter password" required>
+            </div>
+            <br>
+            <div>
+                <input type="submit" value="register">
+            </div>
+        </form>
+    </div>
+
+    <% if(typeof(message) !== "undefined"){ %>
+        <p style="color: green"><%= message %></p>
+    <% } %>
+
+<% include("../layouts/footer.ejs") %>

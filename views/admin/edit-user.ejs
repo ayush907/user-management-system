@@ -1,0 +1,47 @@
+<% include("../layouts/header.ejs") %>
+
+<h1>Edit User</h1>
+
+<div>
+    <form action="" method="post">
+        <div>
+            <label for="name"></label>
+            <input type="text" name="name" placeholder="Enter the Name" value="<%= user.name %>" required>
+        </div>
+        <br>
+        <div>
+            <label for="email"></label>
+            <input type="email" name="email" placeholder="Enter the email" value="<%= user.email %>" required>
+        </div>
+        <br>
+        <div>
+            <label for="mno"></label>
+            <input type="text" name="mno" placeholder="Enter Mobile" value="<%= user.mobile %>" required>
+        </div>
+        <br>
+        <div>
+            <label>Verified</label>
+            <input type="radio" name="verify" value="1" <% if(user.is_verified === 1){ %> checked <% } %>>
+        </div>
+        <br>
+        <div>
+            <label>Unverified</label>
+            <input type="radio" name="verify" value="0" <% if(user.is_verified === 0){ %> checked <% } %>>
+        </div>
+        <br>
+        <div>
+            <input type="hidden" name="id" value="<%= user._id %>">
+        </div>
+        <br>
+        <input type="submit" value="Update User">
+    </form>
+</div>
+
+<div>
+    <ul style="list-style-type: none;">
+        <li><a href="/admin">Go Dashboard</a></li>
+    </ul>
+</div>
+
+
+<% include("../layouts/footer.ejs") %>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+        <img style="width: 10rem; height: 10rem" src="/userImages/<%=user.image %>" alt="<%=user.image %>">
+
+        <form action="/edit" method="post" enctype="multipart/form-data">
+            <div>
+                <input type="hidden" name="user_id" value="<%= user._id %>">
+            </div>
+            <div>
+                <label for="image">image :</label>
+                <input type="file" name="image" value="<%= user.image %>">
+            </div>
+            <br>
+            <div>
+                <label for="name">Name :</label>
+                <input type="text" name="name" value="<%= user.name %>" placeholder="Enter name" required>
+            </div>
+            <br>
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" name="email" value="<%= user.email %>" placeholder="Enter email" required>
+            </div>
+            <br>
+            <div>
+                <label for="mno">Mobile :</label>
+                <input type="text" name="mno" value="<%= user.mobile %>" placeholder="Enter Mobile" required>
+            </div>
+            <br>
+            <input type="submit" value="update-profile">
+        </form>
+    </div>
+</body>
+
+</html>
